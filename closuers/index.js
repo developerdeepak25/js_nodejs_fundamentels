@@ -44,16 +44,16 @@
 
 // Q what will be the console
 
-let count = 0;
-function b() {
-  if (count === 0) {
-    let count = 1; // hadowing
-    console.log(`count`, count);
-  }
-  console.log(count);
-}
+// let count = 0;
+// function b() {
+//   if (count === 0) {
+//     let count = 1; // hadowing
+//     console.log(`count`, count);
+//   }
+//   console.log(count);
+// }
 
-b();
+// b();
 
 // Q ques time optimization with closure
 
@@ -68,11 +68,12 @@ b();
 // }
 
 // console.time("6");
-// find(6)
+// find(2)
 // console.timeEnd("6");
 // console.time("12000");
 // find(400)
 // console.timeEnd("12000");
+
 
 // with closure
 // function find() {
@@ -91,8 +92,10 @@ b();
 // closure(600);
 // console.timeEnd("70");
 // console.time("110");
-// closure(40000);
+// closure(999999);
 // console.timeEnd("110");
+// console.log('----');
+
 
 // Q settimeout output
 
