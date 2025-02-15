@@ -235,3 +235,33 @@ const objClone = {...user4}
 
 objClone.name = 'Tonny master'
 console.log('orginal',user,'clone' ,objClone);
+
+// * CUstom logic for deep copy
+const deepObject ={
+  a:'a',
+  o1:{
+    b:'b',
+    o2:{
+      c:'c'
+    },
+    a2: [1,2,3]
+  },
+  arr1: [1,2,3]
+} // for this shallow copy wolud not work
+
+// logic for deep copy
+
+const deepCopy = (obj) =>{
+  if (typeof obj !== 'object' || obj === null) return obj;
+  const copy = Array.isArray(obj) ? [] : {};
+  for (const key in obj) {
+    copy[key] = deepCopy(obj[key]);
+  } 
+  return copy;
+}
+
+const deepObjectCopy = deepCopy(deepObject);
+deepObjectCopy.o1.o2.c = 'd'
+console.log("orginal", deepObject.o1.o2.c);
+console.log("deep", deepObjectCopy.o1.o2.c);
+

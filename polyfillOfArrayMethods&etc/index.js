@@ -9,16 +9,16 @@ let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 Array.prototype.myMap = function (cb) {
   let temp = [];
   for (let i = 0; i < this.length; i++) {
-    temp.push(cb(temp[i], i, temp));
+    temp.push(cb(this[i], i, this));
   }
   return temp;
 };
 
-// let myMapRes = arr.myMap((elem, i) => {
-//    return arr[i] + 1;
-// });
+let myMapRes = arr.myMap((elem, i) => {
+   return arr[i] + 1;
+});
 
-// console.log(`myMapRes`, myMapRes);
+console.log(`myMapRes`, myMapRes);
 
 // filter polyfill
 

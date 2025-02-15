@@ -17,19 +17,19 @@
 //   return "Hello " + this.name + " is " + age + " and is an " + proff;
 // }
 
-// console.log(sayHello.call(obj, [24, "Software Engineer"]));
+// console.log(sayHello.apply(obj, [24, "Software Engineer"]));
 
-// Question 2 - what is apply?
+// Question 3 - what is bind?
 // it works similar but  returns a function binded  with the specified `this`
 
-// var obj = { name: "piyuash" };
-// function sayHello(age, proff) {
-//   return "Hello " + this.name + " is " + age + " and is an " + proff;
-// }
+var obj = { name: "piyuash" };
+function sayHello(age, proff) {
+  return "Hello " + this.name + " is " + age + " and is an " + proff;
+}
 
-// const bindFunc = sayHello.bind(obj);
+const bindFunc = sayHello.bind(obj);
 
-// console.log(bindFunc(24, "Software Engineer"));
+console.log(bindFunc(24, "Software Engineer"));
 // console.log(bindFunc(45, "SDE-3"));
 
 // question 4 - Output Based Question
@@ -56,6 +56,7 @@ console.log(sayHi.bind(person, 24)); // ths returns a function
 
 // var person2 = { age: 24 };
 // console.log(person1.getAge.call(person2)); // output  - 24
+
 // will get same reult for other 2 methods
 
 // Question 6- ehat is the output

@@ -22,15 +22,15 @@ myFun();
 
 
 // functions local context 
-// variable = 10;
+variable = 10;
 
-// (() => {
-//   foo = 100;
-//   console.log(variable);
-//   var foo = 100;
-//   variable = 20;
-//   console.log(variable);
-// })();
+(() => {
+  foo = 100;
+  console.log(variable);
+  var foo = 100;
+  variable = 20;
+  console.log(variable);
+})();
 
 // console.log(foo); // will give error as functions variables are cleaned up with funtion only and are specific to it only
 // console.log(variable);

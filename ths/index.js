@@ -139,17 +139,17 @@ console.log(user4.farewell()); // What is logged?
 var length = 4;
 
 function callback() {
-  console.log(this.length);
+  console.log('tt',this.length);
 }
 
-// const obj3 = {
+// const obj31 = {
 //   length: 5,
 //   method(fn) {
 //     fn();
 //   },
 // };
 
-// obj3.method(callback);
+// obj31.method(callback);
 
 //  further twicked
 

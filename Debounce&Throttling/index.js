@@ -11,9 +11,9 @@ var pressedCount = 0;
 var triggeredCount = 0;
 
 // usina a lib - lodash for bebounce
-// const debouncedCount = _.debounce(() => {
-//   count.innerHTML = ++triggeredCount;
-// }, 800);
+const debouncedCount = _.debounce(() => {
+  count.innerHTML = ++triggeredCount;
+}, 800);
 
 // btn.addEventListener("click", () => {
 //   btnPress.innerHTML = ++pressedCount;
@@ -25,9 +25,9 @@ var triggeredCount = 0;
 // --> Show "Button Pressed <X> Times" every time button is pessed
 // --> Increment "Triggeres <y> times" every 800ms of throttle
 
-// const throttleCount = _.throttle(() => {
-//   count.innerHTML = ++triggeredCount;
-// }, 800);
+const throttleCount = _.throttle(() => {
+  count.innerHTML = ++triggeredCount;
+}, 800);
 
 // btn.addEventListener("click", () => {
 //   btnPress.innerHTML = ++pressedCount;
@@ -83,11 +83,11 @@ const throttle = (cb, d) => {
   };
 };
 
-const throttleCount = throttle(() => {
+const throttleCount2 = throttle(() => {
   count.innerHTML = ++triggeredCount;
 }, 600);
 
 btn.addEventListener("click", () => {
   btnPress.innerHTML = ++pressedCount;
-  throttleCount();
+  throttleCount2();
 });
