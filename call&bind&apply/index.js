@@ -56,7 +56,6 @@ console.log(sayHi.bind(person, 24)); // ths returns a function
 
 // var person2 = { age: 24 };
 // console.log(person1.getAge.call(person2)); // output  - 24
-
 // will get same reult for other 2 methods
 
 // Question 6- ehat is the output
@@ -77,21 +76,21 @@ console.log(sayHi.bind(person, 24)); // ths returns a function
 
 // Question 7 Call printAnima1s such that it prints all animals in object
 
-const animals = [
-  { species: "Lion", name: "King" },
-  { species: "Whale", name: "Queen" },
-];
+// const animals = [
+//   { species: "Lion", name: "King" },
+//   { species: "Whale", name: "Queen" },
+// ];
 
-function printAnimals(i) {
-  this.print = function () {
-    console.log("#" + i + " " + this.species + ": " + this.name);
-  };
-  this.print();
-}
+// function printAnimals(i) {
+//   this.print = function () {
+//     console.log("#" + i + " " + this.species + ": " + this.name);
+//   };
+//   this.print();
+// }
 
-for (let i = 0; i < animals.length; i++) {
-  printAnimals.call(animals[i], i);
-}
+// for (let i = 0; i < animals.length; i++) {
+//   printAnimals.call(animals[i], i);
+// }
 
 // Question 8 - Append an array to another array wihtout creating a new array
 
@@ -110,15 +109,15 @@ console.log(Math.max.apply(null, numbers));
 
 // Question 10 - Bound function
 
-// function f(){
-//   console.log(this);
-// }
+function f(){
+  console.log(this);
+}
 
-// let user = {
-//   g : f.bind(null)
-// }
+let user = {
+  g : f.bind(null)
+}
 
-// user.g() // is called with no specfic context so it will inherit global context
+user.g() // is called with no specfic context so it will inherit global context
 
 // Question 11 - Bind Chaining
 
@@ -134,11 +133,11 @@ ff(); // func can be binded(though bind() method) with a `this` only once
 
 // function checkPass(success, failed) {
 //   let password = prompt("Password", "");
-//   if (password == "Roadside coder") success();
+//   if (password == "coder") success();
 //   else failed();
 // }
 
-// let user = {
+// let user1 = {
 //   name: "Piyush Agrawal",
 
 //   loginSuccessful() {
@@ -149,8 +148,8 @@ ff(); // func can be binded(though bind() method) with a `this` only once
 //   },
 // };
 
-// checkPass(user.loginSuccessful, user.loginFailed); //-problem
-// checkPass(user.loginSuccessful.bind(user), user.loginFailed.bind(user)); // fix
+// checkPass(user1.loginSuccessful, user1.loginFailed); //-problem
+// checkPass(user1.loginSuccessful.bind(user1), user1.loginFailed.bind(user1)); // fix
 
 // Question 13 - Partial application for login function
 
@@ -160,14 +159,14 @@ ff(); // func can be binded(though bind() method) with a `this` only once
 //   else fail();
 // }
 
-// let user = {
+// let user2 = {
 //   name: "devanand",
 //   login(res) {
 //     console.log(this.name + (res ? " login successful" : " login failed"));
 //   },
 // };
 
-// checkPassword(user.login.bind(user,true), user.login.bind(user,false))
+// checkPassword(user2.login.bind(user2,true), user2.login.bind(user2,false))
 
 // Question 14 - Explicit Binding with Arrow Function
 
@@ -184,7 +183,7 @@ var person1 = {
 
 var person2 = { age: 24 };
 
-person1.getAgeArrow.call(person2); // ?
+person1.getAgeArrow.call(person2); // ? undefined
 // cant apply context on arrow function it only inherits `this`. call,apply, bind changes `this` also arrow function dont have `this` to begin with
 person1.getAge.call(person2); // 24
 
@@ -218,7 +217,7 @@ Function.prototype.myCall = function (context = {}, ...args) {
   context.fn(...args);
 };
 
-// purchaseCar.myCall(car1, "€", 500000);
+purchaseCar.myCall(car1, "€", 500000);
 // console.log(car1);
 
 // polyfill for Apply Method
@@ -235,7 +234,7 @@ Function.prototype.myApply = function (context = {}, args = []) {
   context.fn(...args);
 };
 
-// purchaseCar.myApply(car1, ["€", 500000]);
+purchaseCar.myApply(car1, ["€", 500000]);
 
 
 // polyfill for BIND Method
